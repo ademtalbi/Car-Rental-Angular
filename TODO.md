@@ -1,0 +1,4 @@
+- [x] Fix HTML: Remove invalid <rh> tag in admin-dashboard.component.html
+- [x] Fix TS: Update import path for NgForOf in admin-dashboard.component.ts
+- [x] Fix TS: Add 'any' type to 'element' parameter in forEach loop
+- [x] Fix TS: Import DatePipe for date pipe usage in template
