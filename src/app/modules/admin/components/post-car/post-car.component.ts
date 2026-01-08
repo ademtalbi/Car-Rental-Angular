@@ -20,7 +20,7 @@ export class PostCarComponent {
   selectedFile: File | null | undefined;
   imagePreview:string | ArrayBuffer | null = null;
   listOfOption:Array<{ label: string; value: string}> = [];
-  listOfBrands = ['BMW','AUDI','FERRARI','TESLA','VOLVO','TOYOTA','HONDA','FORD','NISSAN','HYUNDAI','LEXUS','KIA','PEUGEOT'];
+  listOfBrands = ['BMW','AUDI','FERRARI','TESLA','VOLVO','TOYOTA','HONDA','FORD','NISSAN','HYUNDAI','LEXUS','KIA','PEUGEOT','MERCEDES-BENZ','JEEP','PORSCHE','RENAULT','SUBARU','SUZUKI','MAZDA','BRABUS'];
   listOfType = ['Petrol','Hybrid','Diesel','Electric'];
   listOfColor =  ['Red','White','Blue','Black','Orange','Grey','Silver'];
   listOfTransmission = ['Manual','Automatic'];

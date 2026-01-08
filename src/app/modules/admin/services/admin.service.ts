@@ -24,6 +24,26 @@ export class AdminService {
     })
   }
 
+  deleteCar(id:number):Observable<any>{
+    return this.http.delete(BASIC_URL + "/api/admin/car/" + id,
+      {headers: this.createAuthorizationHeader()
+  });
+  }
+
+  getCarBookings():Observable<any>{
+    return this.http.get(BASIC_URL + "/api/admin/car/bookings", {
+      headers:this.createAuthorizationHeader()
+    })
+  }
+
+  changeBookingStatus(bookingId: number, status: string):Observable<any>{
+    return this.http.get(BASIC_URL + '/api/admin/car/bookings/${bookingId}/${status}', {
+      headers:this.createAuthorizationHeader()
+    })
+  }
+
+
+
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(

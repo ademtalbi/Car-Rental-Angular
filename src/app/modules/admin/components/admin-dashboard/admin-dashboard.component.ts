@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
 import { NgForOf, DatePipe } from "@angular/common";
 import { NgZorroImportsModule } from "../../../../NgZorroImportsModule";
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -14,7 +15,8 @@ export class AdminDashboardComponent {
 
   cars: any = [];
 
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService,
+    private message: NzMessageService ) { }
 
   ngOnInit(){
     this.getAllCars();
@@ -28,5 +30,12 @@ export class AdminDashboardComponent {
         this.cars.push(element);
       });
     })
+  }
+  deleteCar(id: number) {
+    console.log("Deleting car with ID:", id);
+    this.adminService.deleteCar(id).subscribe((res) => {
+      this.getAllCars(); // Refresh the car list after deletion
+      this.message.success('Car deleted successfully', {nzDuration: 5000});
+    });
   }
 }
